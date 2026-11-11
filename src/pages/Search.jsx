@@ -80,11 +80,12 @@ const Search = () => {
                 )}
             </div>
             {isLoading && <Loader />}
-            {!isLoading && error && <div className="error">{error}</div>}
+            {!isLoading && error && <div 
+            className="error">{error}</div>}
             {!isLoading && !error && books?.docs.length > 0 && (
                 <div className="book-grid" id="results">
                     {books.docs.map((el, i) => (
-                        <BookCard {...el} key={i} />
+                        <BookCard {...el} book_key={el.key} key={i} />
                     ))}
                 </div>
             )}
